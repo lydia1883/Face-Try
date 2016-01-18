@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script>
+	var str='1584819816516516';
+
+	function test(str){
+
+		var iNum=str.length%3;
+
+		var prev='';
+		var arr=[];
+		var iNow=0;
+		var tmp='';
+
+		if(iNum!=0){
+			prev=str.substring(0,iNum);
+			arr.push( prev );
+		}
+		str=str.substring(iNum);
+		for(var i=0;i<str.length;i++){
+
+			iNow++;
+			tmp+=str[i];
+
+			if(iNow==3 && tmp){
+				arr.push(tmp);
+				tmp='';
+				iNow=0;		
+			}
+
+		}
+		return arr.join(',');
+	}
+
+	alert(test(str));
+
+
+</script>
+</head>
+<body>
+    
+</body>
+</html>
